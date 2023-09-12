@@ -1,10 +1,5 @@
-char *ft_tolower(char *s) {
-    char *p = s;
-    while (*p) {
-        if (*p >= 'A' && *p <= 'Z') {
-            *p += 'a' - 'A';
-        }
-        p++;
-    }
-    return s;
+int ft_tolower(int s) {
+        if (s >= 'A' && s <= 'Z')
+            return (s + 32);
+        return (s);
 }

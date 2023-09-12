@@ -1,9 +1,4 @@
-void ft_isalpha(char *s) {
-    while (*s) {
-        if ((*s >= 'a' && *s <= 'z') || (*s >= 'A' && *s <= 'Z')) {
-            s++;
-        } else {
-            break;
-        }
-    }
+int ft_isalpha(int s)
+{
+    return ((s >= 'A' && s <= 'Z') || (s >= 'a' && s <= 'z'));
 }

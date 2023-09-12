@@ -1,9 +1,5 @@
-char *ft_toupper(char *s) {
-    while (*s) {
-        if (*s >= 'a' && *s <= 'z') {
-            *s -= 32;
-        }
-        s++;
-    }
-    return (s);
+int ft_toupper(int s) {
+        if (s >= 'a' && s <= 'z')
+            return (s - 32);
+        return (s);
 }

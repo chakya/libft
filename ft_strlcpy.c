@@ -1,8 +1,16 @@
-char* ft_strlcpy(char *dst, char *src, int n) {
-    char *p = dst;
-    while (*src && n--) {
-        *p++ = *src++;
+#include <stddef.h>
+
+size_t ft_strlcpy(char *dst, const char *src, size_t n) {
+    size_t i = 0;
+    while (src[i] && i + 1 < n) {
+        dst[i] = src[i];
+        i++;
     }
-    *p = 0;
-    return dst;
+    if (n > 0) {
+        dst[i] = '\0';
+    }
+    while (src[i]) {
+        i++;
+    }
+    return i;
 }

@@ -2,17 +2,16 @@
 # and then compile the library into an executable
 
 # Variables
-CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-SRC = $(wildcard *.c)
-OBJ = $(SRC:.c=.o)
+SRC =*.c
+OBJ = *.o
 NAME = libft.a
 MAIN = main.c
 
 # Rules
-all: $(NAME)
+all: $(NAME) clean
 
-test: all
+test: all clean
 	cc $(CFLAGS) .main.c -L. -lft -o main
 
 $(NAME): $(OBJ)
@@ -20,7 +19,7 @@ $(NAME): $(OBJ)
 	ranlib $(NAME)
 
 $(OBJ): $(SRC)
-	$(CC) $(CFLAGS) -c $(SRC)
+	cc $(CFLAGS) -c $(SRC)
 
 clean:
 	rm -f $(OBJ)
@@ -30,6 +29,5 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
 
 
