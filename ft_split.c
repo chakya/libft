@@ -1,33 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwijaya <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 17:46:05 by cwijaya           #+#    #+#             */
-/*   Updated: 2023/09/13 17:46:10 by cwijaya          ###   ########.fr       */
+/*   Created: 2023/09/13 17:44:32 by cwijaya           #+#    #+#             */
+/*   Updated: 2023/09/13 17:44:33 by cwijaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stddef.h>
-
-char *ft_strnstr(const char *haystack, const char *needle, size_t len) {
+int count_words(char const *s, char c)
+{
+    int flag;
+    int count;
     size_t i;
-    size_t j;
 
+    flag = 0;
+    count = 0;
     i = 0;
-    if (*needle == '\0') {
-        return (char *)haystack;
-    }
-    while (haystack[i] && i < len) {
-        j = 0;
-        while (needle[j] && haystack[i + j] == needle[j] && i + j < len) {
-            j++;
+    while (s[i])
+    {
+        if (s[i] == c)
+        {
+            flag = 0;
         }
-        if (needle[j] == '\0')
-            return (char *) (haystack + i);
+        else if (!flag)
+        {
+            flag = 1;
+            count++;
+        }
         i++;
     }
-    return (0);
+}
+
+int extract_words(char const *s, char c)
+{
+    words
+}
+
+char **ft_split(char const *s, char c)
+{
+    size_t i;
+    size_t len;
+
+    i = 0;
+    len = 0;
 }

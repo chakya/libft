@@ -1,10 +1,22 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cwijaya <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/09/13 17:48:03 by cwijaya           #+#    #+#              #
+#    Updated: 2023/09/13 17:48:08 by cwijaya          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # create a makefile to compile all the functions into a library
 # and then compile the library into an executable
 
 # Variables
 CFLAGS = -Wall -Werror -Wextra
-SRC =*.c
-OBJ = *.o
+SRC = *.c
+OBJ = $(SRC:.c=.o)
 NAME = libft.a
 MAIN = main.c
 

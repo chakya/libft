@@ -1,20 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwijaya <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/12 20:38:37 by cwijaya           #+#    #+#             */
+/*   Updated: 2023/09/12 20:38:38 by cwijaya          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
     size_t slen = 0;
+    size_t l = 0;
     size_t i = 0;
-    char *dup = malloc((len + 1) * sizeof(char));
-    if (dup == NULL)
-        return NULL;
+    
     while (s[slen])
         slen++;
-    if (start > slen)
-    {
-        dup[0] = '\0';
-        return (dup);
-    }
-    while (s[start + i] && i < len)
+    while (l < len && start < slen && s[start + l])
+        l++;
+    char *dup = malloc((l + 1) * sizeof(char));
+    if (dup == NULL)
+        return NULL;
+    while (s[start + i] && i < len && start < slen)
     {
         dup[i] = s[start + i];
         i++;

@@ -1,16 +1,7 @@
 // Create a main function that includes all c files in the current directory and make a test cases to test all functions you've created.
 // Compile the program with gcc -Wall -Wextra -Werror -pedantic *.c
 
-#include <stdio.h>
-#include <string.h>
-#include <assert.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <stddef.h>
-#include <unistd.h>
 #include "libft.h"
-
-#include <stdio.h>
 
 #define ASSERT(a , b) \
         if (!(strcmp((char *)a,(char *)b) == 0)) { \

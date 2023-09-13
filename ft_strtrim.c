@@ -1,33 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwijaya <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/13 17:46:23 by cwijaya           #+#    #+#             */
+/*   Updated: 2023/09/13 17:46:25 by cwijaya          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char in_set(char const *set, char c){
+	int	i;
+
+	i = 0;
+	while(set[i])
+	{
+		if (set[i] ==  c)
+			return c;
+		i++;
+	}
+	return (0);
+}
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-	int i;
-	int j;
-	int k;
-	int len;
+	size_t start;
+	size_t end;
+	size_t i;
 	char *str;
 
-	i = 0;
-	j = 0;
-	k = 0;
-	len = 0;
-	while (s1[len])
-		len++;
-	str = malloc((len + 1) * sizeof(char));
-	if (str == NULL)
+	start = 0;
+	while (s1[start] && in_set(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while(end > start && in_set(set, s1[end - 1]))
+		end--;
+	str = malloc(end - start + 1);
+	if (!str)
 		return (NULL);
-	while (s1[i] && set[j])
+	i = 0;
+	while (start + i < end)
 	{
-		if (s1[i] == set[j])
-		{
-			i++;
-			j = 0;
-		}
-		else
-			j++;
+		str[i] = s1[start + i];
+		i++;
 	}
-	while (s1[i])
-		str[k++] = s1[i++];
-	str[k] = '\0';
+	str[i] = '\0';
 	return (str);
 }
