@@ -3,5 +3,6 @@
         "libft.h": "c",
         "unistd.h": "c",
         "stddef.h": "c"
-    }
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }

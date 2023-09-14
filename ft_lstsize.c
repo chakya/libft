@@ -9,5 +9,14 @@
 /*   Updated: 2023/09/13 17:52:11 by cwijaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int ft_lstsize(t_list *lst);
+int ft_lstsize(t_list *lst)
+{
+	size_t len;
+
+	len = 0;
+	while (lst)
+		len++;
+	return (len);
+}

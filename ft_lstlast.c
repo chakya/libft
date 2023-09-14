@@ -9,12 +9,11 @@
 /*   Updated: 2023/09/13 17:52:16 by cwijaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include "libft.h"
 
 t_list *ft_lstlast(t_list *lst)
 {
-		while ((*lst)->next){
-		lst = (*lst)->next;
-	}
-	(*lst)->next = new;
+	while (lst)
+		lst = lst->next;
+	return (lst);
 }

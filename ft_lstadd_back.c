@@ -9,5 +9,14 @@
 /*   Updated: 2023/09/13 17:52:23 by cwijaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
+void ft_lstadd_back(t_list **lst, t_list *new)
+{
+	if (lst && new)
+	{
+		*lst = ft_lstlast(lst);
+		(*lst)->next = new;
+	}
 
+}

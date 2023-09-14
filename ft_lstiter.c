@@ -9,5 +9,13 @@
 /*   Updated: 2023/09/13 18:13:14 by cwijaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-
+void ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	while(lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
+}
