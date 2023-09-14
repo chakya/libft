@@ -35,16 +35,46 @@ int count_words(char const *s, char c)
     }
 }
 
-int extract_words(char const *s, char c)
+char* extract_words(char const *s, char c, size_t i)
 {
-    words
+    int len;
+    int j;
+    
+    len = 0;
+    j = 0;
+    while (s[i + len] != c)
+    {
+        len++;
+    }
+    char *str = malloc(len + 1);
+    while (j < len)
+    {
+        str[j] = s[i + j];
+        j++;
+    }
+    str[j] = '\0';
+    return (str);
 }
 
 char **ft_split(char const *s, char c)
 {
     size_t i;
+    size_t arri;
     size_t len;
+    size_t wordc;
+    size_t word;
+    char **strs;
 
     i = 0;
-    len = 0;
+    wordc = count_words(s, c);
+    strs = malloc(wordc);
+    while (arri < wordc)
+    {
+        word = extract_words(s, c, i);
+        len = ft_strlen(word);
+        strs[arri] = word;
+        arri++;
+        i += len;
+    }
+    return  (strs);
 }

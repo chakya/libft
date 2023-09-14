@@ -9,5 +9,15 @@
 /*   Updated: 2023/09/13 17:51:19 by cwijaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
+void ft_putstr_fd(char *s, int fd)
+{
+	size_t i;
 
+	i = 0;
+	while(s[i])
+	{
+		write(fd, &s[i], 1);
+	}
+}
