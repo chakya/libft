@@ -13,10 +13,12 @@
 
 void ft_putnbr_fd(int n, int fd)
 {
-	char *ascii_n;
-	int len;
-
-	ascii_n = ft_itoa(n);
-	len = ft_strlen(ascii_n);
-	write(fd, &ascii_n, len);
+    if (n > -10 && n < 0)
+        ft_putchar_fd('-', fd);
+    if (n < -9 || n > 9)
+        ft_putnbr_fd(n / 10, fd);
+    if (n % 10 < 0)
+        ft_putchar_fd(-(n % 10) + '0', fd);
+    else 
+        ft_putchar_fd((n % 10) + '0', fd);
 }
