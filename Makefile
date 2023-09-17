@@ -29,14 +29,11 @@ NAME = libft.a
 # Rules
 all: $(NAME)
 
-test: all clean
-	cc $(CFLAGS) .main.c -L. -lft -o main
-
 bonus: $(BONUS_O)
 	ar rcs $(NAME) $(BONUS_O)
 
 $(NAME): $(OBJ)
-	ar -rc $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
 	cc $(CFLAGS) -c $< -o $@
@@ -45,9 +42,8 @@ clean:
 	rm -f $(OBJ) $(BONUS_O)
 
 fclean: clean
-	rm -f $(NAME) a.out
+	rm -f $(NAME)
 
 re: fclean all
 
-
-
+.PHONY: all clean fclean re bonus
