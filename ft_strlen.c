@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *s) {
-    int len;
+int	ft_strlen(char *s)
+{
+	int	len;
 
-    len = 0;
-    while (s[len]) {
-        len++;
-    }
-    return len;
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }

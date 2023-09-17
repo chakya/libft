@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memset(void *s, int c, int n) {
-    char *p = s;
-    while (n--) {
-        *p++ = c;
-    }
-    return s;
+void	*ft_memset(void *s, int c, int n)
+{
+	char	*p;
+
+	p = s;
+	while (n--)
+		*p++ = c;
+	return (s);
 }

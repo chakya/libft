@@ -14,7 +14,7 @@
 
 int	count_len(int n)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (n <= 0)
@@ -27,12 +27,12 @@ int	count_len(int n)
 	return (len);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *ascii_n;
-	size_t nlen;
-	size_t i;
-	int nb;
+	char	*ascii_n;
+	size_t	nlen;
+	size_t	i;
+	int		nb;
 
 	nlen = count_len(n);
 	i = nlen;

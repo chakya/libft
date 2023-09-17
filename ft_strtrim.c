@@ -9,34 +9,34 @@
 /*   Updated: 2023/09/13 17:46:25 by cwijaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char in_set(char const *set, char c){
+char	in_set(char const *set, char c)
+{
 	int	i;
 
 	i = 0;
-	while(set[i])
+	while (set[i])
 	{
-		if (set[i] ==  c)
-			return c;
+		if (set[i] == c)
+			return (c);
 		i++;
 	}
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t start;
-	size_t end;
-	size_t i;
-	char *str;
+	size_t	start;
+	size_t	end;
+	size_t	i;
+	char	*str;
 
 	start = 0;
 	while (s1[start] && in_set(set, s1[start]))
 		start++;
 	end = ft_strlen(s1);
-	while(end > start && in_set(set, s1[end - 1]))
+	while (end > start && in_set(set, s1[end - 1]))
 		end--;
 	str = malloc(end - start + 1);
 	if (!str)

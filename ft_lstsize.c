@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
 	while (lst)
