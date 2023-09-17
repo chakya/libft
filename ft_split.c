@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void	free_arr(char **strs, size_t len)
+static void	free_arr(char **strs, size_t len)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ void	free_arr(char **strs, size_t len)
 	free(strs);
 }
 
-size_t	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	int		flag;
 	int		count;
@@ -36,9 +36,7 @@ size_t	count_words(char const *s, char c)
 	while (s[i])
 	{
 		if (s[i] == c)
-		{
 			flag = 0;
-		}
 		else if (!flag)
 		{
 			flag = 1;
@@ -86,7 +84,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (arri < wordc)
 	{
-		while (*s == c)
+		while (*s && *s == c)
 			s++;
 		word = get_words(&s, c);
 		if (!word)

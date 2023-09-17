@@ -9,14 +9,13 @@
 /*   Updated: 2023/09/13 17:41:46 by cwijaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*p;
+	unsigned char	*p;
 
-	p = (char *)s;
+	p = s;
 	while (n--)
 		*p++ = 0;
 }

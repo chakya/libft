@@ -9,6 +9,7 @@
 /*   Updated: 2023/09/13 17:44:43 by cwijaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -16,5 +17,5 @@ char	*ft_strchr(const char *s, int c)
 		s++;
 	if (*s == (unsigned char)c)
 		return ((char *) s);
-	return ((void *)0);
+	return (NULL);
 }

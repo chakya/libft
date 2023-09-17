@@ -9,25 +9,24 @@
 /*   Updated: 2023/09/13 17:46:10 by cwijaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stddef.h>
-
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
-	if (*needle == '\0')
-		return ((char *) haystack);
-	while (haystack[i] && i < len)
+	if (*little == '\0')
+		return ((char *) big);
+	while (big[i] && i < len)
 	{
 		j = 0;
-		while (needle[j] && haystack[i + j] == needle[j] && i + j < len)
+		while (little[j] && big[i + j] == little[j] && i + j < len)
 			j++;
-		if (needle[j] == '\0')
-			return ((char *)(haystack + i));
+		if (little[j] == '\0')
+			return ((char *)(big + i));
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

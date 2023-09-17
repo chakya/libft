@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	in_set(char const *set, char c)
+static int	in_set(char const *set, char c)
 {
 	int	i;
 
@@ -19,7 +19,7 @@ char	in_set(char const *set, char c)
 	while (set[i])
 	{
 		if (set[i] == c)
-			return (c);
+			return (1);
 		i++;
 	}
 	return (0);

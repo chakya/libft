@@ -9,8 +9,7 @@
 /*   Updated: 2023/09/13 17:43:22 by cwijaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -23,5 +22,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return (p);
 		p++;
 	}
-	return ((void *)0);
+	return (NULL);
 }

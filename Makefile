@@ -27,7 +27,7 @@ BONUS_O = $(BONUS_S:.c=.o)
 NAME = libft.a
 
 # Rules
-all: $(NAME) 
+all: $(NAME)
 
 test: all clean
 	cc $(CFLAGS) .main.c -L. -lft -o main
@@ -37,7 +37,6 @@ bonus: $(BONUS_O)
 
 $(NAME): $(OBJ)
 	ar -rc $(NAME) $(OBJ)
-	ranlib $(NAME)
 
 %.o: %.c
 	cc $(CFLAGS) -c $< -o $@
